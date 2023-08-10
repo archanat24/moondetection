@@ -1,0 +1,11 @@
+fastapi
+numpy
+pandas
+Pillow
+requests
+tensorflow
+Werkzeug
+uvicorn[standard]
+python-multipart
+tritonclient[all]
+opencv-python
