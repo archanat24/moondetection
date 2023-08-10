@@ -1,20 +1,12 @@
+version: "3"
 services:
-  vf-fastapi-inference-optimised:
-    container_name:
-      "fastapi_triton_client_optimised"
+  api:
     build: .
-    ports:
-      - "8000:4557"
-    #image:
-      #"fastapi-inference-client-optimised:1.0"
+    container_name: "fastapi-application"
+    image:
+      "archanathyagaraj/moon_5:1.0"
     volumes:
-      - ./app/:/app
-    restart: always
-# volumes:
-#   AFSMount:
-#     driver: local
-#     driver_opts:
-#       type: cifs
-#       o: "mfsymlinks,vers=3.0,username=${AFS_NAME},password=${AFS_KEY},addr=${AFS_NAME}.file.core.windows.net"
-#       device: "//${AFS_NAME}.file.core.windows.net/${AFS_CONTAINER}"
-
+      - .:/app
+    ports:
+      - '8000:8000'
+    restart: "always"
